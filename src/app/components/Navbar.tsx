@@ -1,9 +1,9 @@
 "use client"
-
 import IonIcon from "@reacticons/ionicons";
 import { useEffect, useState } from "react";
 import { Link } from 'react-scroll';
 import { Logo } from './ui/Logo';
+
 type List = {
     name: string;
     href: string;
@@ -21,7 +21,7 @@ export const NavBar = () => {
         { name: "Contacto", href: "contact", active: false },
     ];
 
-    useEffect(() => { setLinks([...linksData]) }, [])
+    useEffect(() => { setLinks([...linksData]) }, [linksData]);
 
     const onClick = (id: number) => {
         const newLinks = links.map((link, i) => ({ ...link, active: i === id }));
