@@ -1,14 +1,13 @@
 
 "use client"
 
-// core version + navigation, pagination modules:
-import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
-// import Swiper and modules styles
+import Image from 'next/image';
 import { Element } from 'react-scroll';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export const Home = () => {
@@ -43,7 +42,8 @@ export const Home = () => {
                         {images.map((src, index) => (
                             <SwiperSlide key={index}>
                                 <div className="w-full h-full">
-                                    <img
+                                    <Image
+                                        width={500} height={0} style={{ width: '100%', height: '100%' }}
                                         src={src}
                                         alt={`Slide ${index + 1}`}
                                         className="w-full h-full object-contain hover:scale-50"

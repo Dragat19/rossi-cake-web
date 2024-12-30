@@ -1,6 +1,6 @@
 "use client"
 import IonIcon from "@reacticons/ionicons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from 'react-scroll';
 import { Logo } from './ui/Logo';
 
@@ -10,18 +10,16 @@ type List = {
     active: boolean;
 }
 
+const linksData: List[] = [
+    { name: "Inicio", href: "home", active: true },
+    { name: "Menu", href: "menu", active: false },
+    { name: "Galeria", href: "gallery", active: false },
+    { name: "Contacto", href: "contact", active: false },
+];
+
 export const NavBar = () => {
 
-    const [links, setLinks] = useState<List[]>([])
-
-    const linksData: List[] = [
-        { name: "Inicio", href: "home", active: true },
-        { name: "Menu", href: "menu", active: false },
-        { name: "Galeria", href: "gallery", active: false },
-        { name: "Contacto", href: "contact", active: false },
-    ];
-
-    useEffect(() => { setLinks([...linksData]) }, [linksData]);
+    const [links, setLinks] = useState<List[]>([...linksData])
 
     const onClick = (id: number) => {
         const newLinks = links.map((link, i) => ({ ...link, active: i === id }));
@@ -53,8 +51,8 @@ export const NavBar = () => {
                             smooth={true}
                             offset={-70}
                             duration={400}
-                            onClick={() => onClick(i)}
                             activeClass="activeLink"
+                            onClick={() => onClick(i)}
                             className={`p-6 active:bg-rose-50 hover:bg-rose-50 hover:text-rose-500  font-bold text-sm  ${link.active ? 'bg-rose-50 text-rose-500' : 'text-white'}`}
                         >
                             {link.name}
