@@ -78,11 +78,6 @@ p{
   opacity: 0.8;
 }
 
-img {
-  transition: transform 0.8s ease-in-out;
-}
-
-
 .activeLink {
   @apply bg-white;
   @apply text-rose-500;

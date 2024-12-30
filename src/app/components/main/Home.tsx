@@ -46,7 +46,7 @@ export const Home = () => {
                                         width={500} height={0} style={{ width: '100%', height: '100%' }}
                                         src={src}
                                         alt={`Slide ${index + 1}`}
-                                        className="w-full h-full object-contain hover:scale-50"
+                                        className="w-full h-full object-contain"
                                     />
                                 </div>
                             </SwiperSlide>
